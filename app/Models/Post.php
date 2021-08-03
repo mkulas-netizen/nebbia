@@ -16,6 +16,7 @@ class Post extends Model implements Feedable
     protected $table = 'posts';
     protected $fillable = ['title','content','user_id','created_at','updated_at'];
 
+    /** @todo toto odkomentujte
     public static function boot()
     {
         parent::boot();
@@ -25,6 +26,8 @@ class Post extends Model implements Feedable
             return $model;
         });
     }
+     */
+
 
     public function toFeedItem(): FeedItem
     {

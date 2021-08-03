@@ -27,6 +27,26 @@ class PostsController extends Controller
         ]);
 
         Post::create($fields);
+        return redirect()->back();
+    }
+
+
+    public function update(Request $request,$id){
+        $fields = $request->validate([
+            'title'      => 'string',
+            'content' => 'string',
+        ]);
+
+        $post = Post::find($id);
+        $post->update($fields);
+
+        return redirect()->back();
+    }
+
+
+    public function destroy($id){
+
+        Post::find($id)->delete();
 
         return redirect()->back();
     }
