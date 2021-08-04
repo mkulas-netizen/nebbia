@@ -12,6 +12,7 @@ return [
     |
     */
 
-    'rss' => 'RSS LIST',
+    'rss' => 'RSS MY POST LIST',
+    'rssS' => 'RSS SLOVENSKO'
 
 ];

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use App\Models\SlovenskoRss;
 
 class ReadRssController extends Controller
 {
@@ -11,7 +13,20 @@ class ReadRssController extends Controller
      */
     public function index()
     {
-        return view('reader.index');
+        $url = 'https://www.slovensko.sk/sk/rss/oznamy';
+        $feeds = simplexml_load_file($url);
+        foreach ($feeds->channel->item as $feed) {
+            if (!SlovenskoRSS::where('link',$feed->link)->exists()) {
+                SlovenskoRss::create([
+                    'link' => $feed->link,
+                    'title' => $feed->title,
+                    'description' => $feed->description,
+                    'pubDate' => Carbon::parse($feed->pubDate)
+                ]);
+            }
+        }
+
+        return view('reader.index',['data' => $feeds->channel->item]);
     }
 
     /**

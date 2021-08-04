@@ -20,9 +20,8 @@ Auth::routes();
 
 Route::get('/', function () {
     $posts = Post::paginate(2);
-    $url = 'https://www.slovensko.sk/sk/rss/oznamy';
-    $feeds = simplexml_load_file($url);
-    return view('welcome',  compact('posts'),['data' => $feeds->channel->item]);
+
+    return view('welcome',  compact('posts'));
 });
 
 Route::feeds();
