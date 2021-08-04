@@ -18,6 +18,7 @@ class SlovenkoRSS extends Migration
             $table->string('title');
             $table->text('link');
             $table->text('description');
+            $table->string('read')->nullable();
             $table->datetime('pubDate');
         });
     }

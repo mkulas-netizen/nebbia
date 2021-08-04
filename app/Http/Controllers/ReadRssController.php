@@ -41,7 +41,7 @@ class ReadRssController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**

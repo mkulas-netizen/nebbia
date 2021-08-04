@@ -15,9 +15,7 @@ class SlovenskoRss extends Model
     use HasFactory;
 
     protected $table = 'slovenko';
-    protected $fillable = ['title', 'link', 'description','pubDate'];
+    protected $fillable = ['title', 'link', 'description','read','pubDate'];
     public $timestamps = false;
-
-
 
 }
