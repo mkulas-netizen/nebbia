@@ -39,6 +39,10 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/home') }}">{{ __('app.mypost') }}</a>
+
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ url('posts.rss') }}">{{ __('app.rss') }}</a>
 
                         </li>
@@ -82,7 +86,6 @@
                 </div>
             </div>
         </nav>
-
         <main class="py-4">
             @yield('content')
         </main>

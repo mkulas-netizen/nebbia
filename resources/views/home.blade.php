@@ -7,9 +7,24 @@
                     <h1>My posts</h1>
                     @if(!empty($posts) && $posts->count())
                         @foreach($posts as $post)
-                            <div class="comment mt-5 shadow-lg border-dark p-3 text-justify float-left"><img
-                                    src="https://i.imgur.com/CFpa3nK.jpg" alt="" class="rounded-circle" width="40"
-                                    height="40">
+                            <div class="comment mt-5 shadow-lg border-dark p-3 text-justify float-left">
+
+                                <div class="clearfix">
+                                    <div class="float-left">
+                                        <img
+                                            src="https://i.imgur.com/CFpa3nK.jpg" alt="" class="rounded-circle" width="40"
+                                            height="40">
+                                        <a href="">Edit</a>
+                                    </div>
+                                    <div class="float-right">
+                                        <form method="post" action="{{ route('delete',['id' => $post->id])  }}">
+                                            @csrf
+
+                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                        </form>
+                                    </div>
+                                </div>
+
                                 <h4>{{ $post->user->name }}</h4>
                                 <h5>{{$post->title }}</h5>
                                 <p>{{$post->content}}</p>

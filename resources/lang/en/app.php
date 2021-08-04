@@ -12,7 +12,8 @@ return [
     |
     */
 
-    'rss' => 'RSS MY POST LIST',
-    'rssS' => 'RSS SLOVENSKO'
+    'rss' => 'RSS ALL POST USERS',
+    'rssS' => 'RSS SLOVENSKO',
+    'mypost' => 'My Post'
 
 ];
