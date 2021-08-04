@@ -14,9 +14,8 @@ class PostsController extends Controller
 
 
     public function edit(Request $request){
-       $rss =  Post::find($request->id)->first();
-
-       return view('rssDelete',['rss' => $rss]);
+       $rss =  Post::where('id',$request->id)->first();
+       return view('rssDetail',['rss' => $rss]);
     }
 
 
@@ -37,9 +36,7 @@ class PostsController extends Controller
             'content' => 'string',
         ]);
 
-        $post = Post::find($id);
-        $post->update($fields);
-
+        Post::where('id',$id)->update($fields);
         return redirect()->back();
     }
 

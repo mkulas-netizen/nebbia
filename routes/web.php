@@ -28,13 +28,13 @@ Route::feeds();
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/posts/{post}', [PostsController::class, 'show'])->name('posts.show');
     Route::post('/posts', [PostsController::class, 'store'])->name('posts');
+
     Route::get('/rss/{id}',[PostsController::class,'getOne']);
     Route::post('/delete/{id}',[PostsController::class,'destroy'])->name('delete');
+    Route::post('/update/{id}',[PostsController::class,'update'])->name('update');
+    Route::get('/edit/{id}',[PostsController::class,'edit'])->name('edit');
 
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-
-
 
     Route::resource('/rssReader',ReadRssController::class);
 });

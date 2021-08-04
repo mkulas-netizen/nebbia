@@ -14,12 +14,11 @@
                                         <img
                                             src="https://i.imgur.com/CFpa3nK.jpg" alt="" class="rounded-circle" width="40"
                                             height="40">
-                                        <a href="">Edit</a>
+                                        <a href="{{ route('edit',$post->id) }}">Edit</a>
                                     </div>
                                     <div class="float-right">
                                         <form method="post" action="{{ route('delete',['id' => $post->id])  }}">
                                             @csrf
-
                                             <button type="submit" class="btn btn-danger">Delete</button>
                                         </form>
                                     </div>
