@@ -18,3 +18,10 @@ https://drive.google.com/file/d/11SPWrgwyX0e6xsV74KXTi9BQYKPLEJKc/view
 
 FrontEnd comment
 https://drive.google.com/file/d/1EULuiYm9-YCC0YkvFfgf8JkzMtYGyVUf/view
+
+
+
+
+        4.8.2021 - Pridané funkcie , Čítanie RSS záznamu zo slovenkso.sk 
+        Pridanie záznamu do tatabázy ( len nových )
+        Pridanie ajaxu pre kontrolu či príspevok bol prečitaný . 
