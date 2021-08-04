@@ -12,10 +12,10 @@
                             <div class="float-left">
                                 <img
                                 src="https://i.imgur.com/CFpa3nK.jpg" alt="" class="rounded-circle" width="40"
-                                height="40">
+                                height="40"><a href="{{ route('rssReader.edit',  $item->id ) }}">Edit</a>
                             </div>
                                 <div class="float-right">
-                                  @if(empty($item->category))
+                                  @if($item->category != 'Popular')
                                     <img
                                         src="{{ asset('star_black.jpg') }}" data-id="{{ $item->id }}" alt="" class="no-border js-status" width="30"
                                         height="15">
@@ -29,7 +29,11 @@
                             <h4><a href="{{ $item->link }}" data-id="{{ $item->id }}" class="js-link" target="_blank"> {{ $item->title }}</a></h4>
                             <h5>{{ $item->description }}</h5>
                             <p class="text-success">{{ $item->read }}</p>
-                            <span>- {{ date('j F, Y', strtotime($item->pubDate))   }} </span>
+                            <span>- {{ date('j F, Y', strtotime($item->pubDate))   }} </span><br>
+                            <div class="btn-group">
+                                <p  class="btn btn-outline-dark">Zaujimavé</p>
+                                <p  class="btn btn-outline-dark">Nezaujimavé</p>
+                            </div>
                         </div>
                     @endforeach
                 @endif

@@ -57,7 +57,7 @@ class ReadRssController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('reader.edit',['data' => SlovenskoRss::where('id',$id)->first()]);
     }
 
     /**
@@ -65,7 +65,13 @@ class ReadRssController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validate = $request->validate([
+            'title' => 'string',
+            'description' => 'string'
+        ]);
+
+        SlovenskoRss::where('id',$id)->update($validate);
+        return redirect()->back();
     }
 
     /**
