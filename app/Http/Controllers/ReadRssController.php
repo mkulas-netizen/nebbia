@@ -25,7 +25,7 @@ class ReadRssController extends Controller
                 ]);
             }
         }
-        return view('reader.index',['data' => SlovenskoRss::get()]);
+        return view('reader.index',['data' => SlovenskoRss::orderBy('pubDate', 'ASC')->get()]);
     }
 
     /**
