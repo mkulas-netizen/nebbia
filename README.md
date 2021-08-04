@@ -25,3 +25,6 @@ https://drive.google.com/file/d/1EULuiYm9-YCC0YkvFfgf8JkzMtYGyVUf/view
         4.8.2021 - Pridané funkcie , Čítanie RSS záznamu zo slovenkso.sk 
         Pridanie záznamu do tatabázy ( len nových )
         Pridanie ajaxu pre kontrolu či príspevok bol prečitaný . 
+
+
+https://drive.google.com/file/d/16sqYP8oeVq15QLSoD6ZErd77vl8fwE7u/view
