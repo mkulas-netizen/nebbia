@@ -4,7 +4,7 @@ require('./bootstrap');
 $(document).ready(function () {
     $('.link').click(function () {
         let dataId = $(this).attr('data-id');
-        myform('post','rssReader',{read:true, id:dataId })
+        myform('post','postReady',{read:'Success', id:dataId })
     })
 })
 

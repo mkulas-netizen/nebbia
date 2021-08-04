@@ -12,6 +12,7 @@
                                 height="40">
                             <h4><a href="{{ $item->link }}" data-id="{{ $item->id }}" class="link" target="_blank"> {{ $item->title }}</a></h4>
                             <h5>{{ $item->description }}</h5>
+                            <p class="text-success">{{ $item->read }}</p>
                             <span>- {{ date('j F, Y', strtotime($item->pubDate))   }} </span>
                         </div>
                     @endforeach
