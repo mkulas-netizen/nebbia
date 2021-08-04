@@ -42,6 +42,9 @@
                             <a class="nav-link" href="{{ url('posts.rss') }}">{{ __('app.rss') }}</a>
 
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('rssReader') }}">{{ __('app.rssS') }}</a>
+                        </li>
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))

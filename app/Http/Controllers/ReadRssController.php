@@ -13,6 +13,13 @@ class ReadRssController extends Controller
      */
     public function index()
     {
+        $data = SlovenskoRss::orderBy('pubDate', 'ASC')->paginate(3);
+        return view('reader.index',compact('data'));
+    }
+
+
+    public function create()
+    {
         $url = 'https://www.slovensko.sk/sk/rss/oznamy';
         $feeds = simplexml_load_file($url);
         foreach ($feeds->channel->item as $feed) {
@@ -26,14 +33,7 @@ class ReadRssController extends Controller
             }
         }
 
-        $data = SlovenskoRss::orderBy('pubDate', 'ASC')->paginate(3);
-        return view('reader.index',compact('data'));
-    }
-
-
-    public function create()
-    {
-        //
+        return redirect()->back();
     }
 
     /**

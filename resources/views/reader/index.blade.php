@@ -1,6 +1,10 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
+    <form method="get" action="{{ route('rssReader.create') }}">
+        @csrf
+        <button type="submit" class="btn btn-success">Upgrade data</button>
+    </form>
     <section class="mt-5">
         <div class="row">
             <div class="col-12 pb-4">
