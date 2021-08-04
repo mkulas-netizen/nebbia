@@ -20,7 +20,6 @@ Auth::routes();
 
 Route::get('/', function () {
     $posts = Post::paginate(2);
-
     return view('welcome',  compact('posts'));
 });
 

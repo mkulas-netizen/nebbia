@@ -12,11 +12,12 @@
                                 height="40">
                             <h4><a href="{{ $item->link }}" target="_blank"> {{ $item->title }}</a></h4>
                             <h5>{{ $item->description }}</h5>
-                            <span>- {{ $item->pubDate }} </span>
+                            <span>- {{ date('j F, Y', strtotime($item->pubDate))   }} </span>
                         </div>
                     @endforeach
                 @endif
             </div>
+            {!! $data->links() !!}
         </div>
     </section>
 </div>
