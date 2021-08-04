@@ -20,7 +20,7 @@
 <div class="relative flex items-top justify-center min-h-screen  sm:items-center py-4 sm:pt-0">
     @if (Route::has('login'))
         <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-        @auth
+            @auth
                 <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">My posts</a>
             @else
                 <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a>
@@ -32,28 +32,51 @@
             <a class="text-sm text-gray-700 underline ml-4" href="{{ url('posts.rss') }}">{{ __('app.rss') }}</a>
         </div>
     @endif
-    <section class="mt-5">
-        <div class="container">
+    <div class="container">
+        <section class="mt-5">
+
             <div class="row">
                 <div class="col-12 pb-4">
-                    <h1>All posts</h1>
+                    <h1>All myposts</h1>
                     @if(!empty($posts) && $posts->count())
-                    @foreach($posts  as $post)
-                        <div class="comment mt-5 shadow-lg border-dark p-3 text-justify float-left"><img
-                                src="https://i.imgur.com/CFpa3nK.jpg" alt="" class="rounded-circle" width="40"
-                                height="40">
-                            <h4>{{ $post->user->name }}</h4>
-                            <h5>{{ $post->title }}</h5>
-                            <p>{{$post->content  }}</p>
-                            <span>- {{ $post->created_at->format('j F, Y') }}</span>
-                        </div>
-                    @endforeach
+                        @foreach($posts  as $post)
+                            <div class="comment mt-5 shadow-lg border-dark p-3 text-justify"><img
+                                    src="https://i.imgur.com/CFpa3nK.jpg" alt="" class="rounded-circle" width="40"
+                                    height="40">
+                                <h4>{{ $post->user->name }}</h4>
+                                <h5>{{ $post->title }}</h5>
+                                <p>{{$post->content  }}</p>
+                                <span>- {{ $post->created_at->format('j F, Y') }}</span>
+                            </div>
+                        @endforeach
                     @endif
                 </div>
                 {!! $posts->links() !!}
             </div>
-        </div>
-    </section>
+
+        </section>
+
+        <section class="mt-5">
+            <div class="row">
+                <div class="col-12 pb-4">
+                    <h1>RSS READER SLOVENSKO .sk</h1>
+                    @if(!empty($data) && $data->count())
+
+                        @foreach($data as $item)
+                            <div class="comment mt-5 shadow-lg border-dark p-3 text-justify"><img
+                                    src="https://i.imgur.com/CFpa3nK.jpg" alt="" class="rounded-circle" width="40"
+                                    height="40">
+                                <h4><a href="{{ $item->link }}"> {{ $item->title }}</a></h4>
+                                <h5>{{ $item->description }}</h5>
+                                <p></p>
+                                <span>- {{ $item->pubDate }} </span>
+                            </div>
+                        @endforeach
+                    @endif
+                </div>
+            </div>
+        </section>
+    </div>
 </div>
 </body>
 </html>

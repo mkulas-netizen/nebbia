@@ -12,7 +12,8 @@
         "laravel/framework": "^8.40",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.0",
-        "spatie/laravel-feed": "^3.2"
+        "spatie/laravel-feed": "^3.2",
+      "ext-simplexml": "*"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
