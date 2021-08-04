@@ -25,8 +25,7 @@ class ReadRssController extends Controller
                 ]);
             }
         }
-
-        return view('reader.index',['data' => $feeds->channel->item]);
+        return view('reader.index',['data' => SlovenskoRss::get()]);
     }
 
     /**
