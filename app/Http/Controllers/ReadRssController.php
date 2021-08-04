@@ -80,6 +80,11 @@ class ReadRssController extends Controller
         if ($request->ajax()){
             SlovenskoRss::where('id',$request->id)->update( ['read' => $request->read]);
         }
+    }
 
+    public function categoryStatus(Request $request){
+        if ($request->ajax()){
+            SlovenskoRss::where('id',$request->id)->update( ['category' => $request->category]);
+        }
     }
 }
